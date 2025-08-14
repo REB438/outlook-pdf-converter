@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp 
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:type="MailApp">
+  
+  <Id>a13791da-e24e-4a3d-bfe1-f1ade7ca0ca0</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>PDF Converter</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="PDF Email Converter"/>
+  <Description DefaultValue="Convert emails to PDF"/>
+  <IconUrl DefaultValue="http://localhost:3000/taskpane.html"/>
+  <SupportUrl DefaultValue="http://localhost:3000"/>
+  
+  <Hosts>
+    <Host xsi:type="MailHost"/>
+  </Hosts>
+  
+  <Requirements>
+    <Sets>
+      <Set Name="Mailbox" MinVersion="1.1"/>
+    </Sets>
+  </Requirements>
+  
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="http://localhost:3000/taskpane.html"/>
+        <RequestedHeight>400</RequestedHeight>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+  
+  <Permissions>ReadWriteMailbox</Permissions>
+  
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
+  </Rule>
+</OfficeApp>
